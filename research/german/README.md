@@ -1,0 +1,2 @@
+# Auf Deutsche, Bitte!
+While the other team members have been working on langauges that they actually speak, I am working on a language I barely understand, mainly in the context of Rammstein songs. The goal behind this is both to test Whisper's ability to translate German, and to force me to refresh my long dormant German skills to make sure that the translation makes sense.
