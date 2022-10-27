@@ -52,7 +52,7 @@ We are currently exploring Kaldi. A good starting point is this [tutorial](https
 kaldi-speech-recognition-for-beginners-a-simple-tutorial/)
 Brief Description -
 [Kaldi](https://github.com/kaldi-asr/kaldi) is a speech recognition toolkit that has been widely popular in the research community for many years.
-Like DeepSpeech, Kaldi has good out-of-the-box accuracy and supports the ability to train your own models. It’s also been thoroughly tested ; A lot of companies currently use Kaldi in production and have used it for a while--making more developers confident in its application.
+Like DeepSpeech, Kaldi has good out-of-the-box accuracy and supports the ability to train your own models. It’s also been thoroughly tested --a lot of companies currently use Kaldi in production and have used it for a while--making more developers confident in its application.
 
 # Wav2Letter
 
@@ -70,7 +70,7 @@ Overall, the platform is well-defined and constantly updated, making it a straig
 
 # CoQui
 
-Coqui is majorly written in C++. We will not be considering it for our project
+Coqui is majorly written in C++. We will not be considering it for our project.
 Brief Description -
 [Coqui](https://github.com/coqui-ai/STT) is another deep learning toolkit for Speech-to-Text transcription. Coqui is used in over twenty languages for projects and also offers a variety of essential inference and productionization features.
 The platform also releases custom trained models and has bindings for various programming languages for easier deployment.
