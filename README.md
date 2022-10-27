@@ -48,7 +48,7 @@ DeepSpeech also has decent out-of-the-box accuracy for an open source option, an
 
 # Kaldi
 
-We are currently exploring Kaldi. A good starting point is this [tutorial](https://www.assemblyai.com/blog/
+We are currently exploring Kaldi. A good starting point is this [tutorial.](https://www.assemblyai.com/blog/
 kaldi-speech-recognition-for-beginners-a-simple-tutorial/)
 Brief Description -
 [Kaldi](https://github.com/kaldi-asr/kaldi) is a speech recognition toolkit that has been widely popular in the research community for many years.
