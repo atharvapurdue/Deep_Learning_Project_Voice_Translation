@@ -55,7 +55,7 @@ Like DeepSpeech, Kaldi has good out-of-the-box accuracy and supports the ability
 
 # Wav2Letter
 
-We will not be going with Wav2Letter as it is majorly writtten in C++.
+We will not be going with Wav2Letter as it is majorly written in C++.
 Brief Description -
 [Wav2Letter](https://github.com/flashlight/wav2letter) is Facebook AI Research’s Automatic Speech Recognition (ASR) Toolkit, also written in C++, and using the ArrayFire tensor library.
 Like DeepSpeech, Wav2Letter is decently accurate for an open source library and is easy to work with on a small project.
@@ -73,4 +73,3 @@ Coqui is majorly written in C++. We will not be considering it for our project.
 Brief Description -
 [Coqui](https://github.com/coqui-ai/STT) is another deep learning toolkit for Speech-to-Text transcription. Coqui is used in over twenty languages for projects and also offers a variety of essential inference and productionization features.
 The platform also releases custom trained models and has bindings for various programming languages for easier deployment.
-
