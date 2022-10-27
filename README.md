@@ -56,7 +56,7 @@ Like DeepSpeech, Kaldi has good out-of-the-box accuracy and supports the ability
 
 # Wav2Letter
 
-We will not be going with Wav2Letter as it is majorly writtten in C++
+We will not be going with Wav2Letter as it is majorly writtten in C++.
 Brief Description -
 [Wav2Letter](https://github.com/flashlight/wav2letter) is Facebook AI Research’s Automatic Speech Recognition (ASR) Toolkit, also written in C++, and using the ArrayFire tensor library.
 Like DeepSpeech, Wav2Letter is decently accurate for an open source library and is easy to work with on a small project.
