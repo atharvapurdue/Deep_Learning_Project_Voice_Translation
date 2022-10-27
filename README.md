@@ -26,14 +26,14 @@ AssemblyAI has expanded the languages it supports to include English, Spanish, F
 
 # Google Speech to text
 
-We will not be going with Google Speech to text as we want our project to be completely open-source
+We will not be going with Google Speech to text as we want our project to be completely open-source.
 Brief Description -
 Google Speech-to-Text is a well known speech transcription API. Google gives users 60 minutes free transcription, with $300 in free credits for Google Cloud hosting.
 However, since Google only supports transcribing files already in a Google Cloud Bucket, the free credits won’t get you very far. Google can also be a bit difficult to get started with since you need to sign up for a GCP account and project, even to use the free tier, which is surprisingly complicated.
 Still, with good accuracy and 63+ languages supported, Google is a decent choice if you’re willing to put in some initial work.
 
 # AWS Transcribe
-We will not be going with AWS Trascribe as we want our project to be completely open-source
+We will not be going with AWS Trascribe as we want our project to be completely open-source.
 Brief Description -
 AWS Transcribe offers one hour free per month for the first 12 months of use.
 Like Google, you must create an AWS account first if you don’t already have one, which is a complex process. AWS also has lower accuracy compared to alternative APIs and only supports transcribing files already in an Amazon S3 bucket.
@@ -52,7 +52,7 @@ We are currently exploring Kaldi. A good starting point is this [tutorial](https
 kaldi-speech-recognition-for-beginners-a-simple-tutorial/)
 Brief Description -
 [Kaldi](https://github.com/kaldi-asr/kaldi) is a speech recognition toolkit that has been widely popular in the research community for many years.
-Like DeepSpeech, Kaldi has good out-of-the-box accuracy and supports the ability to train your own models. It’s also been thoroughly tested--a lot of companies currently use Kaldi in production and have used it for a while--making more developers confident in its application.
+Like DeepSpeech, Kaldi has good out-of-the-box accuracy and supports the ability to train your own models. It’s also been thoroughly tested ; A lot of companies currently use Kaldi in production and have used it for a while--making more developers confident in its application.
 
 # Wav2Letter
 
@@ -65,7 +65,7 @@ Like DeepSpeech, Wav2Letter is decently accurate for an open source library and 
 
 We will be actively looking at Speechbrain and compare it against Whisper to see its performance. 
 Brief Description -
-[SpeechBrain](https://github.com/speechbrain/speechbrain)SpeechBrain is a PyTorch-based transcription toolkit. The platform releases open implementations of popular research works and offers a tight integration with HuggingFace for easy access.
+[SpeechBrain](https://github.com/speechbrain/speechbrain) is a PyTorch-based transcription toolkit. The platform releases open implementations of popular research works and offers a tight integration with HuggingFace for easy access.
 Overall, the platform is well-defined and constantly updated, making it a straightforward tool for training and finetuning.
 
 # CoQui
