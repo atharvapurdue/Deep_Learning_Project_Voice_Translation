@@ -43,7 +43,7 @@ However, if you’re looking for a specific feature, like medical transcription,
 
 We are currently exploring DeepSpeech but most of the code is in C++. For over the air translation, DeepSpeech is a good option.
 Brief Description -
-[DeepSpeech](https://github.com/mozilla/DeepSpeech)is an open source embedded Speech-to-Text engine designed to run in real-time on a range of devices, from high-powered GPUs to a Raspberry Pi 4. The DeepSpeech library uses end-to-end model architecture pioneered by Baidu.
+[DeepSpeech](https://github.com/mozilla/DeepSpeech) is an open source embedded Speech-to-Text engine designed to run in real-time on a range of devices, from high-powered GPUs to a Raspberry Pi 4. The DeepSpeech library uses end-to-end model architecture pioneered by Baidu.
 DeepSpeech also has decent out-of-the-box accuracy for an open source option, and is easy to fine tune and train on your own data.
 
 # Kaldi
