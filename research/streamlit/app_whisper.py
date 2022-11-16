@@ -91,6 +91,9 @@ def speech_to_translation(model, src_lang, dest_lang):
                     text = model.transcribe(stream)
 
                     # we now need to translate to the target language
+                    # also, check if whisper requires mp3 files or what is needed
+                    # TODO: look at atharva's translation notebook to see how to do it
+
             
             else:
                 status_indicator.write("AudioReciver is not set. Abort.")
