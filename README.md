@@ -73,3 +73,38 @@ Coqui is majorly written in C++. We will not be considering it for our project.
 Brief Description -
 [Coqui](https://github.com/coqui-ai/STT) is another deep learning toolkit for Speech-to-Text transcription. Coqui is used in over twenty languages for projects and also offers a variety of essential inference and productionization features.
 The platform also releases custom trained models and has bindings for various programming languages for easier deployment.
+
+
+# Readme and setup for whisper-playground for 'as-real-as-it-gets' time translation
+
+## Setup
+1. Whisper requires the command-line tool [`ffmpeg`](https://ffmpeg.org/) and [`portaudio`](http://portaudio.com/docs/v19-doxydocs/index.html) to be installed on your system, which is available from most package managers:
+```bash
+# on Ubuntu or Debian
+sudo apt update && sudo apt install ffmpeg
+sudo apt install portaudio19-dev
+
+# on Arch Linux
+sudo pacman -S ffmpeg
+sudo pacman -S portaudio
+
+# on MacOS using Homebrew (https://brew.sh/)
+brew install ffmpeg
+brew install portaudio
+
+# on Windows using Chocolatey (https://chocolatey.org/)
+choco install ffmpeg
+
+# on Windows using Scoop (https://scoop.sh/)
+scoop install ffmpeg
+```
+
+2. Clone or fork this repository
+3. Install the backend and frontend environmet `sh install_playground.sh`
+4. Run the backend `cd backend && source venv/bin/activate && flask run --port 8000`
+5. In a different terminal, run the React frontend `cd interface && yarn start`
+### note: if you are using node version greater than 16, please also use the following command on the second terminal where you run yarn from. (for best results, use node version 16 itself)
+6. for node version greater than 16:  `export NODE_OPTIONS=--openssl-legacy-provider`
+
+## License
+This repository and the code and model weights of Whisper are released under the MIT License.
