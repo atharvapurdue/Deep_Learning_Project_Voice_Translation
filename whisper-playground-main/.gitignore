@@ -1,0 +1,4 @@
+/backend/venv/
+/backend/__pycache__/
+/interface/node_modules/
+/.vscode
