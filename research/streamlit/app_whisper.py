@@ -87,7 +87,7 @@ def speech_to_translation(model, src_lang, dest_lang):
 
                 if len(sound_chunk) > 0:
                     buffer = np.array(sound_chunk.get_array_of_samples())
-                    options = dict(beam_size=5, best_of=5)
+                    options = dict(beam_size=5, best_of=5, language=dest_lang)
                     translate_options = dict(task="translate", **options)
                     stream.feedAudioContent(buffer)
                     text = model.transcribe(stream, **translate_options)
