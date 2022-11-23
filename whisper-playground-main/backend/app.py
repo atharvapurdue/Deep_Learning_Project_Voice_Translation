@@ -11,6 +11,7 @@ CORS(app)
 
 @app.route('/transcribe', methods=['POST'])
 def transcribe():
+    print("HEYO!")
     if request.method == 'POST':
         language = request.form['language']
         model = request.form['model_size']
