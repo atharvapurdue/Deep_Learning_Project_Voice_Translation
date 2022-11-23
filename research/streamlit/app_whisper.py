@@ -87,13 +87,15 @@ def speech_to_translation(model, src_lang, dest_lang):
 
                 if len(sound_chunk) > 0:
                     buffer = np.array(sound_chunk.get_array_of_samples())
+                    options = dict(beam_size=5, best_of=5)
+                    translate_options = dict(task="translate", **options)
                     stream.feedAudioContent(buffer)
-                    text = model.transcribe(stream)
+                    text = model.transcribe(stream, **translate_options)
 
                     # we now need to translate to the target language
                     # also, check if whisper requires mp3 files or what is needed
                     # TODO: look at atharva's translation notebook to see how to do it
-
+                    text_output.markdown(f"**Text:** {text['text']}")
             
             else:
                 status_indicator.write("AudioReciver is not set. Abort.")
