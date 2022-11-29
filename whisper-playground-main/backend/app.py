@@ -43,7 +43,7 @@ def transcribe():
         return "This endpoint only processes POST wav blob"
 
 @app.route('/transcribe2', methods=['POST'])
-def transcribe():
+def transcribe2():
     if request.method == 'POST':
         language = request.form['language']
         model = request.form['model_size']
