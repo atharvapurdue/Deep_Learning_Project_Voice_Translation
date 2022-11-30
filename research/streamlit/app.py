@@ -12,6 +12,7 @@ import av
 import numpy as np
 import pydub
 import streamlit as st
+import whisper
 
 from streamlit_webrtc import WebRtcMode, webrtc_streamer
 
@@ -20,7 +21,6 @@ HERE = Path(__file__).parent
 logger = logging.getLogger(__name__)
 
 def main():
-    import whisper
     st.header("Real Time Speech-to-Text")
     st.markdown("This demo app is using [Whisper](https://github.com/openai/whisper), \
                 an open speech-to-text engine.")
