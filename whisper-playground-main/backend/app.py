@@ -34,3 +34,4 @@ def transcribe():
         return result['text']
     else:
         return "This endpoint only processes POST wav blob"
+    
