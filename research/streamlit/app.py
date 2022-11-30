@@ -120,4 +120,7 @@ if __name__ == "__main__":
     fsevents_logger = logging.getLogger("fsevents")
     fsevents_logger.setLevel(logging.WARNING)
 
+    # we need to install whisper here
+    os.system('pip install git+https://github.com/openai/whisper.git')
+
     main()
