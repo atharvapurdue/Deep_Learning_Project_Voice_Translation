@@ -1,96 +1,85 @@
 import axios from 'axios';
-
-import React,{Component} from 'react';
+import React, { Component } from 'react';
+import { saveAs } from 'file-saver';
 
 class App extends Component {
-
+	subfile = null
 	state = {
-
-	// Initially, no file is selected
-	selectedFile: null
+		selectedFile: null
 	};
-	
-	// On file select (from the pop up)
+
 	onFileChange = event => {
-	
-	// Update the state
-	this.setState({ selectedFile: event.target.files[0] });
-	
+		this.setState({ selectedFile: event.target.files[0] });
 	};
-	
-	// On file upload (click the upload button)
+
 	onFileUpload = () => {
-	
-	// Create an object of formData
-	const formData = new FormData();
-	
-	// Update the formData object
-	formData.append(
-		"myFile",
-		this.state.selectedFile,
-		this.state.selectedFile.name
-	);
-	
-	// Details of the uploaded file
-	console.log(this.state.selectedFile);
-	
-	// Request made to the backend api
-	// Send formData object
-	axios.post("http://localhost:8000/videosub", formData).then((res) => {
-    console.log(res)
-  });
+
+		const formData = new FormData();
+
+		formData.append(
+			"myFile",
+			this.state.selectedFile,
+			this.state.selectedFile.name
+		);
+
+		axios({
+			url: 'http://localhost:8000/videosub', //your url
+			method: 'POST',
+			data: formData,
+			headers: { "Content-Type": 'multipart/form-data' },
+			responseType: 'blob', // important
+		}).then((res) => {
+			console.log(res.data)
+			saveAs(res.data, "video.mp4");
+		})
 	};
-	
-	// File content to be displayed after
-	// file upload is complete
+
 	fileData = () => {
-	
-	if (this.state.selectedFile) {
-		
-		return (
-		<div>
-			<h2>File Details:</h2>
-			<p>File Name: {this.state.selectedFile.name}</p>
 
-			<p>File Type: {this.state.selectedFile.type}</p>
+		if (this.state.selectedFile) {
 
-			<p>
-			Last Modified:{" "}
-			{this.state.selectedFile.lastModifiedDate.toDateString()}
-			</p>
+			return (
+				<div>
+					<h2>File Details:</h2>
+					<p>File Name: {this.state.selectedFile.name}</p>
 
-		</div>
-		);
-	} else {
-		return (
-		<div>
-			<br />
-			<h4>Choose before Pressing the Upload button</h4>
-		</div>
-		);
-	}
+					<p>File Type: {this.state.selectedFile.type}</p>
+
+					<p>
+						Last Modified:{" "}
+						{this.state.selectedFile.lastModifiedDate.toDateString()}
+					</p>
+				</div>
+
+			);
+		} else {
+			return (
+				<div>
+					<br />
+					<h3 style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>Choose before Pressing the Upload button</h3>
+				</div>
+			);
+		}
 	};
-	
+
 	render() {
-	
-	return (
-		<div>
-			<h1>
-			GeeksforGeeks
-			</h1>
-			<h3>
-			File Upload using React!
-			</h3>
-			<div>
-				<input type="file" onChange={this.onFileChange} />
-				<button onClick={this.onFileUpload}>
-				Upload!
-				</button>
+		return (
+
+			<div style={{
+				backgroundColor: '#873e23'
+			}}>
+				<h1 style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+					Add Subtitles To Your Videos!
+				</h1>
+				<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+					<input type="file" onChange={this.onFileChange} />
+					<button onClick={this.onFileUpload}>
+						Upload!
+					</button>
+				</div>
+				{this.fileData()}
 			</div>
-		{this.fileData()}
-		</div>
-	);
+		);
 	}
 }
-
 export default App;

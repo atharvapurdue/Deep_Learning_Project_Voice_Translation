@@ -43,14 +43,12 @@ def subtitle_the_video():
     print(request.form)
     print(request.files)
     print(request.method)
-    
     if request.method == 'POST':
          language = "english"
          input_video = request.files['myFile']
          model = "small"
          input_video.save(input_video.filename)
     print(language,input_video,model)
-    
     if model != 'large' and language == 'english':
             model = model + '.en'
     audio_model = whisper.load_model(model)
@@ -82,5 +80,5 @@ def subtitle_the_video():
     output_video = audio_path + "_subtitled.mp4"
     video = ffmpeg.input(input_video.filename)
     audio = video.audio
-    ffmpeg.concat(video.filter("subtitles", subtitle), audio, v=1, a=1).output(output_video).run()
-    return output_video
+    ffmpeg.concat(video.filter("subtitles", subtitle), audio, v=1, a=1).output(output_video).run(overwrite_output=True)
+    return flask.send_file(output_video,mimetype='video/mp4',as_attachment=True)
