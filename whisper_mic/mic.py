@@ -2,17 +2,13 @@ import io
 from pydub import AudioSegment
 import speech_recognition as sr
 import whisper
-import tempfile
 import os
 import click
 import pygame
 from io import BytesIO
 from gtts import gTTS
-
-
-temp_dir = tempfile.mkdtemp()
-save_path = os.path.join(temp_dir, "temp.wav")
-
+import torch
+import numpy as np
 
 @click.command()
 @click.option("--model", default="base", help="Model to use", type=click.Choice(["tiny","base", "small","medium","large"]))
@@ -43,23 +39,22 @@ def main(model, english,verbose, energy, pause,dynamic_energy):
             mp3_player = BytesIO()
             # get and save audio to wav file
             audio = r.listen(source)
-            data = io.BytesIO(audio.get_wav_data())
-            audio_clip = AudioSegment.from_file(data)
-            audio_clip.export(save_path, format="wav")
+            torch_audio = torch.from_numpy(np.frombuffer(audio.get_raw_data(), np.int16).flatten().astype(np.float32) / 32768.0)
 
-            if english:
-                result = audio_model.transcribe(save_path, language='english')
-            else:
-                result = audio_model.transcribe(save_path, **translate_options)
+#            if english:
+#                result = audio_model.transcribe(torch_audio, language='english')
+#            else:
+            result = audio_model.transcribe(torch_audio, **translate_options)
 
-            if not verbose:
-                predicted_text = result["text"]
-                print("You said: " + predicted_text)
-                tts = gTTS(result["text"], lang='en')
-                tts.write_to_fp(mp3_player)
-                pygame.mixer.music.load(mp3_player, 'mp3')
-                pygame.mixer.music.play()
-            else:
-                print(result)
+#            if not verbose:
+            predicted_text = result["text"]
+#            print("You said: " + predicted_text)
+            tts = gTTS(result["text"], lang='en')
+            tts.write_to_fp(mp3_player)
+            pygame.mixer.music.load(mp3_player, 'mp3')
+            pygame.mixer.music.play()
+#            else:
+            print("You said: " + predicted_text)
+            return(predicted_text)
                 
 main()
