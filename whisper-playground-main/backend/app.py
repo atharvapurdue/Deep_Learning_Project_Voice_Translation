@@ -40,19 +40,14 @@ def transcribe():
 
 @app.route('/videosub', methods=['POST'])
 def subtitle_the_video():
-    print(request.form)
-    print(request.files)
-    print(request.method)
     if request.method == 'POST':
-         language = "english"
+         language = "hindi"
          input_video = request.files['myFile']
          model = "small"
          input_video.save(input_video.filename)
-    print(language,input_video,model)
     if model != 'large' and language == 'english':
             model = model + '.en'
     audio_model = whisper.load_model(model)
-    print(audio_model.device)
     def video2mp3(video_file, output_ext="mp3"):
         filename, ext = os.path.splitext(video_file)
         subprocess.call(["ffmpeg", "-y", "-i", video_file, f"{filename}.{output_ext}"], 
@@ -61,10 +56,6 @@ def subtitle_the_video():
         return f"{filename}.{output_ext}"
     
     audio_file = video2mp3(input_video.filename)
-    print(audio_file)
-    audio_file_info = mediainfo(audio_file)
-    print(audio_file_info)
-    
     def translate(audio):
         options = dict(beam_size=5, best_of=5)
         translate_options = dict(task="translate", **options)
