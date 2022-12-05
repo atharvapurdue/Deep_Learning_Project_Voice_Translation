@@ -1,0 +1,2 @@
+# Streamlit Application
+This application is designed to be run on huggingface spaces. You can set up a GitHub action to pull any changes made in this folder to the spaces repo, following [these instructions](https://huggingface.co/docs/hub/spaces-github-actions).
