@@ -45,9 +45,9 @@ def subtitle_the_video():
     print(request.method)
     
     if request.method == 'POST':
-         language = request.form['language']
-         input_video = request.files['video']
-         model = request.form['model_size']
+         language = "english"
+         input_video = request.files['myFile']
+         model = "small"
          input_video.save(input_video.filename)
     print(language,input_video,model)
     
@@ -83,4 +83,4 @@ def subtitle_the_video():
     video = ffmpeg.input(input_video.filename)
     audio = video.audio
     ffmpeg.concat(video.filter("subtitles", subtitle), audio, v=1, a=1).output(output_video).run()
-    return subtitle
+    return output_video
