@@ -76,10 +76,10 @@ class App extends Component {
 	return (
 		<div>
 			<h1>
-			GeeksforGeeks
+			Welcome to Application of Deep Learning Project
 			</h1>
 			<h3>
-			File Upload using React!
+			Automated english subtitle generation!
 			</h3>
 			<div>
 				<input type="file" onChange={this.onFileChange} />
