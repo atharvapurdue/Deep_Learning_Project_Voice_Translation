@@ -98,13 +98,12 @@ choco install ffmpeg
 # on Windows using Scoop (https://scoop.sh/)
 scoop install ffmpeg
 ```
-
-2. Clone or fork this repository
-3. Install the backend and frontend environmet `sh install_playground.sh`
-4. Run the backend `cd backend && source venv/bin/activate && flask run --port 8000`
-5. In a different terminal, run the React frontend `cd interface && yarn start`
 ### note: if you are using node version greater than 16, please also use the following command on the second terminal where you run yarn from. (for best results, use node version 16 itself)
-6. for node version greater than 16:  `export NODE_OPTIONS=--openssl-legacy-provider`
-
+2. for node version greater than 16:  `export NODE_OPTIONS=--openssl-legacy-provider`
+3. Clone or fork this repository
+4. Install the backend and frontend environmet `sh install_playground.sh`
+5. Run the backend `cd backend && source venv/bin/activate && flask run --port 8000`
+6. In a different terminal, run the React frontend `cd interface && yarn start` for the real time translation functionality's frontend
+7. In yet another terminal, run `cd video_subs/my-app && npm start` to start the frontend for the video subtitle feature
 ## License
 This repository and the code and model weights of Whisper are released under the MIT License.
