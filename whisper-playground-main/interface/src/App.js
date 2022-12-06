@@ -104,7 +104,7 @@ const App = ({ classes }) => {
     formData.append("language", selectedLangRef.current)
     formData.append("model_size", modelOptions[selectedModelRef.current])
     formData.append("audio_data", recordedBlob.blob, 'temp_recording');
-    axios.post("http://0.0.0.0:8000/transcribe", formData, { headers })
+    axios.post("http://localhost:8000/transcribe2", formData, { headers })
       .then((res) => {
         setTranscribedData(oldData => [...oldData, res.data])
         setIsTranscribing(false)
@@ -120,7 +120,7 @@ const App = ({ classes }) => {
     <div className={classes.root}>
       <div className={classes.title}>
         <Typography variant="h3">
-          Whisper Playground <span role="img" aria-label="microphone-emoji">🎤</span>
+          Real Time Translation and Transcription <span role="img" aria-label="microphone-emoji">🎤</span>
         </Typography>
       </div>
       <div className={classes.settingsSection}>
