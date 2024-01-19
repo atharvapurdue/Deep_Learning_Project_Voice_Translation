@@ -3,7 +3,9 @@
 
 This project aims to finetune Whisper and and intergrate it with real-time audio translation and subtitle generation for a given video.
 Here is the final result -
-![poster](https://github.com/atharvapurdue/Deep_Learning_Project_Voice_Translation/assets/31735343/fcbd65f4-a9aa-4846-9370-1370918fd6cf)
+
+<img width="890" alt="image" src="https://github.com/atharvapurdue/Deep_Learning_Project_Voice_Translation/assets/31735343/a909a365-38a3-4474-949b-e47c8e49f39b">
+
  The following models and platforms were tested - 
 
 # OpenAI Whisper
