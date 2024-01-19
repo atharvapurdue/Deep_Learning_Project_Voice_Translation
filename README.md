@@ -1,10 +1,13 @@
 # Deep Learning Project: Voice Translation
 
+
 This project aims to finetune Whisper and and intergrate it with real-time audio translation and subtitle generation for a given video. The following models and platforms were tested - 
 
 # OpenAI Whisper
 
 One of the models we are investigating is OpenAI's [Whisper](https://openai.com/blog/whisper/). In brief, Whisper is an automatic speech recognition system developed by OpenAI that has been trained on 680k hours of multilingual speech. It uses an encoder-decoder Transformer, with samples chunked into 30-second segments.
+
+![approach_whisper](https://github.com/atharvapurdue/Deep_Learning_Project_Voice_Translation/assets/31735343/be79f820-3d50-4474-90c1-c9037ac76f91)
 
 # ESPNet
 
