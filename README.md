@@ -1,6 +1,6 @@
 # Deep Learning Project: Voice Translation
 
-This project aims to utilize existing speech translation models to create a application that can do translation, ideally in real time. The following models and platforms are currently being investigated by the group as we work through the semester.
+This project aims to finetune Whisper and and intergrate it with real-time audio translation and subtitle generation for a given video. The following models and platforms were tested - 
 
 # OpenAI Whisper
 
